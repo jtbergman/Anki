@@ -4,21 +4,21 @@ Helper files for working with Anki
 ## Multi Cloze (Incremental)
 
 ### Usage
-Import [this Anki package](incremental-multi-cloze/incremental-multi-cloze.apkg) to receive the "Cloze Multi (Incremental)" note type then install [Refocus](https://ankiweb.net/shared/info/1642550423)[^1]
+Import [this Anki package](incremental-multi-cloze/incremental-multi-cloze.apkg) to receive the "Cloze Multi (Incremental)" note type
 
 ### Example
-Creates a single card to memorize A, B, C, D.  
+Creates a single card to memorize A, B, C, D
 ```
 Memorize {{c1::A}}, {{c1::B}}, {{c1::C}}, and {{c1::D}}.
 ```
 
-Creates one card to memorize X, Y, Z and one card to memorize A, B, C.
+Creates one card to memorize X, Y, Z and one card to memorize A, B, C
 ```
 Remember {{c1::X}}, {{c1::Y}}, and {{c1::Z}}. But also {{c2::A}}, {{c2::B}}, and {{c2::C}}. 
 ```
 
 ### Configuration
-To configure this note type, open the front template and customize the following portion of the script.
+To configure this note type, open the front template and customize the following portion of the script[^1]
 ```javascript
 // **************************************************
 // Configuration: User Settings
@@ -37,6 +37,4 @@ let textForHiddenCloze = "[...]";
 ### Video Demo
 https://user-images.githubusercontent.com/61445278/163032790-996e8f63-f4bd-4b50-a02b-30d6ca85ebf6.mov
 
-[^1]: [Refocus](https://ankiweb.net/shared/info/1642550423) is only required to support keyboard-based navigation. This add-on will allow cards – and the embedded script – to received `keypress` events necessary for navigation. If you would prefer to use click-based navigation[^2], you do not need to install this add-on. Instead just verify that `clickedBasedNavigationIsEnabled` is set to `true` in your configuration settings.
-
-[^2]: The click-based navigation implementation is based on [itraveller's script](https://anki.tenderapp.com/discussions/ankidesktop/16538-opening-clozes-one-a-time). However, I do not recommend using itraveller's script because it gives hidden clozes the same length as their answer. This means you may end up memorizing answers based on their cloze-length rather than true memorization. To prevent this, the `incremental-multi-cloze` script makes all hidden clozes appear as "[...]" by default. 
+[^1]: Multi Cloze (Incremental) is based on [itraveller's script](https://anki.tenderapp.com/discussions/ankidesktop/16538-opening-clozes-one-a-time). Multi Cloze (Incremental) adds a few improvements including keyboard-based navigation, click-based navigation, and fixed-length hidden clozes. The script provided by itraveller makes hidden clozes the same length as their answers. This can result in memorizing based on cloze length rather than true memorization.
