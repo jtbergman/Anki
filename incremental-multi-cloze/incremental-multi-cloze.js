@@ -2,13 +2,14 @@
   // What key is used to advance? 
   let keyToPress = 'n';
 
-  // Store some necessary values for hiding clozes
+
+  // Store necessary values for hiding clozes
   let clozes;
   let cloze_answers;
   let next_cloze_to_show;
 
 
-  // Invoke once the back card is visible because the cloze elemens get reloaded
+  // Invoke once the back card is visible because the cloze elements get reloaded
   function populate_necessary_values() {
     clozes = document.getElementsByClassName("cloze");
     cloze_answers = [];
@@ -20,7 +21,7 @@
   }
 
 
-  // Hides all the cloze elements and gives them a fix width as element width is a visual hint
+  // Hides all the cloze elements and gives them a temp value for visual consistency 
   function hide_clozes_from_idx(idx) {
     next_cloze_to_show = idx
     for (i = next_cloze_to_show; i < clozes.length; i++) {
@@ -58,7 +59,7 @@
   }
 
 
-  // Determines the appropriate behavior for when `keyToPress` is press
+  // Determines the appropriate behavior for when `keyToPress` is pressed
   function keypressHandler() {
     if (document.getElementById('front-of-card')) {
       show_answer();
