@@ -61,17 +61,21 @@
 
   // Determines the appropriate behavior for when `keyToPress` is pressed
   function keypressHandler() {
+    if (!document.getElementById('front-of-card') && !document.getElementById('back-of-card')) {
+      show_answer();
+      return
+    }
+
     if (document.getElementById('front-of-card')) {
       show_answer();
       return;
     }
 
-    if (next_cloze_to_show >= clozes.length) {
+    if (document.getElementById('back-of-card') && next_cloze_to_show < clozes.length) {
+      clozes[next_cloze_to_show].innerHTML = cloze_answers[next_cloze_to_show];
+      next_cloze_to_show += 1;
       return;
     }
-
-    clozes[next_cloze_to_show].innerHTML = cloze_answers[next_cloze_to_show];
-    next_cloze_to_show += 1;
   }
 
 
