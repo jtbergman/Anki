@@ -1,5 +1,5 @@
 # Anki
-Helpers files for working with Anki
+Helper files for working with Anki
 
 ## Incremental Multi Cloze
 
